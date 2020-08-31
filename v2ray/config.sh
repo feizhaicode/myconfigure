@@ -7,16 +7,15 @@ read host
 
 
 if [ ! -f $NginxFilePath ];then
-	echo "set \$host $host">>$NginxFilePath
 cat <<done>>$NginxFilePath
   server {
         listen       80;
-        server_name  \$host;
+        server_name  $host;
 	rewrite ^(.*) https://\$server_name\$1 permanent;
 }
     server {
         listen       443 ssl http2;
-        server_name  \$host;
+        server_name  $host;
         root         /usr/share/nginx/html;
 		charset utf-8;
         location / {
