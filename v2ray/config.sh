@@ -50,7 +50,21 @@ cat <<done>>$v2rayFilePath
 		"error": "/var/log/v2ray/error.log"
 	},
   "inbounds": [
-    
+    {
+      "port": 35861,
+      "listen": "127.0.0.1", 
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/sync"
+        }
+      }
+    }
   ],
   "outbounds": [
     {
