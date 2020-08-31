@@ -13,3 +13,5 @@ curl -O https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install
 curl -O https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-dat-release.sh
 bash install-release.sh
 bash install-dat-release.sh
+systemctl start v2ray.service
+systemctl enable v2ray.service
