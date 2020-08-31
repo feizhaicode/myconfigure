@@ -1,10 +1,10 @@
 #!/bin/bash
-path=/etc/nginx/conf.d/default.conf.tmp
+FilePath="/etc/nginx/conf.d/default.conf.tmp"
 
 echo "enter Host:"
 read host
-echo "set \$host $host">>$path
-cat <<done>>$path
+echo "set \$host $host">>$FilePath
+cat <<done>>$FilePath
   server {
         listen       80;
         server_name  \$host;
