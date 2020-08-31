@@ -12,7 +12,7 @@ cat <<done>>$NginxFilePath
   server {
         listen       80;
         server_name  \$host;
-	rewrite ^(.*) https://$server_name$1 permanent;
+	rewrite ^(.*) https://\$server_name\$1 permanent;
 }
     server {
         listen       443 ssl http2;
