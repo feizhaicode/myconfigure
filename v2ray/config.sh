@@ -5,9 +5,9 @@ v2rayFilePath=/usr/local/etc/v2ray/config.json.tmp
 echo "enter Host:"
 read host
 
-if [ $select == 0 ];then
-	if [ ! -f $NginxFilePath ];then
-	echo "set \$host $host">>$FilePath
+
+if [ ! -f $NginxFilePath ];then
+	echo "set \$host $host">>$NginxFilePath
 cat <<done>>$NginxFilePath
   server {
         listen       80;
@@ -40,8 +40,7 @@ else
 		echo "$NginxFilePath:File exists"
 	fi
 	
-if [ $select == 0 ];then
-	if [ ! -f $v2rayFilePath ];then
+if [ ! -f $v2rayFilePath ];then
 cat <<done>>$v2rayFilePath
 
 {
